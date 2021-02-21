@@ -1,0 +1,36 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Добавление класса</title>
+    <link href="~/css/styleRegis.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Класс</h1>
+
+    <form asp-action="Create" asp-route-id="@ViewBag.UserId" method="post">
+        <<fieldset class="block">
+            <legend>Данные класса</legend>
+            <div>
+
+
+                <label for="name">Название</label>
+                <input type="text" name="Name" maxlength="10" id="name" required="required" />
+            </div>
+
+
+            <div class="sum">
+                <input class="but" c type="submit" name="registration" value="Добавить" />
+            </div>
+
+
+        </fieldset>
+    </form>
+    <div>
+        <a href="~/Class/Index?id=@ViewBag.UserId" type="submit" >Back</a>
+    </div>
+</body>
+</html>

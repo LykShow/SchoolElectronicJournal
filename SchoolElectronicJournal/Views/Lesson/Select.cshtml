@@ -1,0 +1,49 @@
+﻿@model LessonStGradeViewModel
+@if (Model.Students.Count() == 0)
+{
+    <div class="row">
+        <div class="col text-center p-2">No Data</div>
+    </div>
+}
+else
+{
+<div>
+    <div>
+        @using (Html.BeginForm("Select", "Lesson", new { id=Model.CurrentLes.LessonId, userid=ViewBag.UserId }, FormMethod.Get))
+        {
+            <div class="form-inline form-group">
+                <label class="control-label">Name: </label>
+                <input type="text" name="SearchString" class="form-control" />
+
+                <label class="control-label">Class: </label>
+                @Html.DropDownList("class", Model.Class)
+
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        }
+    </div>
+    <div>
+        @foreach (var p in Model.Students)
+        {
+            <div class="row p-2">
+                <div class="col">@p.Name</div>
+                <div class="col">@p.Soname</div>
+                <div class="col"></div>
+                <span class="card-text p-1">
+
+                    <a href="~/Grade/Index?stid=@p.StudentID&lesid=@Model.CurrentLes.LessonId&userid=@ViewBag.UserId&classid=@ViewBag.ClassId"
+                       class="btn btn-success btn-sm pull-right" style="float:right">
+                        Select
+                    </a>
+                    <a href="~/Lesson/RemoveStudent?stid=@p.StudentID&lesid=@Model.CurrentLes.LessonId&userid=@ViewBag.UserId"
+                       class="btn btn-success btn-sm pull-right" style="float:right">
+                        Remove
+                    </a>
+                </span>
+            </div>
+        }
+    </div>
+</div>
+}

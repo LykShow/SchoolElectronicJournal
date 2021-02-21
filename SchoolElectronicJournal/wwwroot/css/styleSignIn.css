@@ -1,0 +1,37 @@
+body{
+background-color: #21242e;
+  font-family: Arial;
+
+
+}
+h1{
+  color: white;
+  text-align: center;
+}
+
+fieldset.block{
+  background-color: #cb2354;
+  color:white;
+
+
+}
+
+div.left{
+  float: left;
+  width: 20%;
+  border-color: #cb2354;
+}
+label{
+ float:left;
+  padding-right: 4%;
+  text-align: center;
+  width: 10px;
+}
+div{
+  padding: 0.5%;
+  width: auto;
+}
+input.but{
+  color: white;
+  background-color: #21242e;
+}

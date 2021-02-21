@@ -1,0 +1,32 @@
+﻿body {
+    background-color: #21242e;
+    font-family: Arial;
+}
+
+h1.first {
+    text-align: center;
+    color: white;
+    font-family: Arial;
+}
+
+div.two {
+    background-color: #cb2354;
+    color: white;
+    font-size: 120%;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    padding: 50px;
+}
+
+a.three {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #21242e;
+    text-decoration: none;
+}

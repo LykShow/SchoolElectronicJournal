@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Class>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Профиль</title>
+    <link href="~/css/styleProf.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div class="one">
+        <ul class="four">
+            <li class="li"><a class="three" href="FirstList.html">Главная</a></li>
+            <li class="li">Контакты</li>
+            <li class="li">О нас</li>
+            <li class="li"><a class="three" href="registraation.html">Регистрация</a></li>
+            <li class="li">Профиль</li>
+            <li class="li">Войти</li>
+        </ul>
+    </div>
+    <h1>Классы</h1>
+
+    @if (Model.Count() == 0)
+    {
+        <div class="row">
+            <div class="sum">No Data</div>
+        </div>
+    }
+    else
+    {
+
+        <div class="sum">
+            <ol>
+                @foreach (Class p in Model)
+                {
+                <li>
+                    @p.Name
+
+                    <span class="card-text p-1">
+
+                        <a href="~/Class/Delete/@p.ClassId"
+                           class="slk" style="float:right">
+                            Remove
+                        </a>
+                    </span>
+                    <span class="card-text p-1">
+
+                        <a href="~/Student/Index?id=@p.ClassId&userid=@ViewBag.UserId"
+                           class="slk" style="float:right">
+                            Select
+                        </a>
+                    </span>
+                </li>
+
+                }
+            </ol>
+        </div>
+
+    }
+    
+        <a href="~/Class/Create?id=@ViewBag.UserId" type="submit" name="button">Add</a>
+    
+  
+        <a href="~/Home/List?id=@ViewBag.UserId" type="submit" name="button">Back</a>
+   
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿@model EditUserViewModel 
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Изменение данных</title>
+    <link href="~/css/styleRegis.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Изменение данных</h1>
+
+
+
+
+    <form asp-action="Edit" asp-controller="User" asp-route-id="@Model.Id" method="post">
+        <fieldset class="block">
+            <legend>Данные пользователя</legend>
+            <div>
+
+
+                <label for="Name">Имя</label>
+                <input type="text" name="Name" maxlength="30" id="name" required="required" />
+            </div>
+            <div>
+                <label for="SoName">Фамилия</label>
+                <input type="text" name="Soname" maxlength="30" id="soname" required="required" />
+            </div>
+            
+            <div>
+                <label for="Email">Email</label>
+                <input type="text" id="Email" name="Email" />
+            </div>
+
+            <div class="sum">
+                <button type="submit" class="but">Изменить</button>
+            </div>
+
+
+        </fieldset>
+
+
+
+
+    </form>
+    <div class="col">
+        <a href="~/User/Index?userid=@Model.Id" type="submit" class="btn btn-primary">Back</a>
+    </div>
+</body>
+</html>
+

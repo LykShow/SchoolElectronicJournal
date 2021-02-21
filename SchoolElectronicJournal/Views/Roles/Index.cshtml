@@ -1,0 +1,81 @@
+﻿@model IEnumerable<User>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Пользователи</title>
+    <link href="~/css/styleProf.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div class="one">
+        <ul class="four">
+            <li class="li"><a class="three" href="FirstList.html">Главная</a></li>
+            <li class="li">Контакты</li>
+            <li class="li">О нас</li>
+            <li class="li"><a class="three" href="registraation.html">Регистрация</a></li>
+            <li class="li">Профиль</li>
+            <li class="li">Войти</li>
+        </ul>
+    </div>
+    <h1>Студенты</h1>
+
+    @if (Model.Count() == 0)
+    {
+        <div class="sum">
+            <div class="col text-center p-2">No Data</div>
+        </div>
+    }
+    else
+    {
+        <div class="sum">
+            <div>
+                <form asp-action="Index" asp-route-userid="@ViewBag.UserId" asp-route-id="@ViewBag.Class" method="get">
+                    <div class="sum">
+                        <label>Имя: </label>
+                        <input type="text" name="SearchString" class="form-control" />
+
+
+                        <button type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <ol>
+                    @foreach (User p in Model)
+                    {
+
+                        <li>
+                            <div>
+
+                                @p.Name
+
+
+                                @p.SoName
+
+
+
+                                
+
+
+
+                               
+
+                            </div>
+                        </li>
+
+                    }
+                </ol>
+            </div>
+        </div>
+    }
+    <div class="sum">
+        <a href="~/Student/Create?id=@ViewBag.Class&userid=@ViewBag.UserId" type="submit" class="slka">Add</a>
+    </div>
+    <div class="sum">
+        <a href="~/Class/Index?id=@ViewBag.UserId" type="submit" class="slka">Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>Электронный журнал</title>
+    <link href="~/css/StyleHome.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <h1 class="first">Добро пожаловать на наш сайт</h1>
+    <div class="two">
+        <ul>
+            <li><a class="three" href="FirstList.html">Главная</a></li>
+            <li>Контакты</li>
+            <li>О нас</li>
+            
+            <li><a class="three" asp-controller="Account" asp-action="Registr">Регистрация</a></li>
+            <li><a class="three" asp-controller="Home" asp-action="List">Профиль</a></li>
+            <li><a class="three" asp-controller="Account" asp-action="Login">Войти</a></li>
+        </ul>
+    </div>
+</body>
+</html>

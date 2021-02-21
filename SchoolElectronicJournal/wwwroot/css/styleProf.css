@@ -1,0 +1,49 @@
+body{
+background-color: #21242e;
+  font-family: Arial;
+}
+div.sum{
+  color: white;
+  background-color: #cb2354;
+
+}
+div.list{
+  color:white;
+  background-color: #cb2354;
+
+}
+li{
+  padding: 0.5%;
+}
+h3{
+  color:white;
+  text-align: left;
+}
+h1{
+  text-align: center;
+  color: white;
+  padding-top: 5%;
+}
+a{
+  text-decoration: none;
+  color: white;
+
+}
+a:hover{
+  text-decoration: none;
+  color:#21242e;
+}
+li.li{
+  padding: 30px;
+  color: white;
+  display: inline;
+}
+
+div.one{
+  background-color: #cb2354;
+  color: white;
+  font-size: 100%;
+  text-align: center;
+position: fixed;
+
+}

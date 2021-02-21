@@ -1,0 +1,36 @@
+﻿@model Lesson
+<form asp-action="Edit"  asp-route-userid="@ViewBag.UserId" asp-route-id="@Model.LessonId" method="post">
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+
+            <table>
+
+                <tr>
+                    @{
+
+
+
+                        foreach (var course in ViewBag.CurrentStudent)
+                        {
+
+
+                            @:<td>
+                                <input type="checkbox"
+                                       name="selectedStudent"
+                                       value="@course.StudentId"
+                                       @(Html.Raw(course.True ? "checked=\"checked\"" : "")) />
+                                @course.Name @:  @course.SoName
+                            @:</td>
+                        }
+
+                    }
+            </table>
+        </div>
+        <p>
+            <button type="submit" >Add</button>
+        </p>
+        <div class="col">
+            <a href="~/Lesson/Index?id=@ViewBag.UserId" type="submit" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,68 @@
+﻿@model User
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Данные</title>
+    <link href="~/css/styleProf.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div class="one">
+        <ul class="four">
+            <li class="li"><a class="three" href="FirstList.html">Главная</a></li>
+            <li class="li">Контакты</li>
+            <li class="li">О нас</li>
+            <li class="li"><a class="three" href="registraation.html">Регистрация</a></li>
+            <li class="li">Профиль</li>
+            <li class="li">Войти</li>
+        </ul>
+    </div>
+    <h1>Данные</h1>
+                
+    <div>
+        <ol>
+            <li>
+                <div>
+                    @Model.Name
+
+
+                </div>
+            </li>
+            <li>
+                <div>
+                    @Model.Email
+
+                </div>
+            </li>
+            <li>
+
+            </li>
+
+
+        </ol>
+        <div>
+            <a href="~/User/Edit?id=@Model.Id"
+               class="slka" style="float:right">
+                Изменить
+            </a>
+        </div>
+        <div>
+
+            <a href="~/User/ChangePassword?userid=@Model.Id"
+               class="slka" style="float:left">
+                Изменить Пароль
+            </a>
+
+        </div>
+        </div>
+
+
+
+        <div class="sum">
+            <a href="~/Home/List?id=@ViewBag.UserId" type="submit" class="slka">Back</a>
+        </div>
+</body>
+</html>

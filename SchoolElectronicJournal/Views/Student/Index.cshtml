@@ -1,0 +1,55 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Регистрация</title>
+    <link href="~/css/styleRegis.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Студент</h1>
+
+    
+
+   
+        <form asp-action="Create" asp-route-userid="@ViewBag.UserId" asp-route-id="@ViewBag.Class" method="post">
+            <fieldset class="block">
+                <legend>Данные студента</legend>
+                <div>
+
+
+                    <label for="Name">Имя</label>
+                    <input type="text" name="Name" maxlength="30" id="name" required="required" />
+                </div>
+                <div>
+                    <label for="Soname">Фамилия</label>
+                    <input type="text" name="Soname" maxlength="30" id="soname" required="required" />
+                </div>
+                <div>
+                    <label for="Age">Возраст</label>
+                    <input type="number" id="Age" name="Age" />
+                </div>
+
+                <div>
+                    <label for="Gender">Пол</label>
+                    <input type="text" id="Gender" name="Gender" />
+                </div>
+
+                <div class="sum">
+                    <button  type="submit" class="but">Добавить</button>
+                </div>
+
+
+            </fieldset>
+
+
+                
+            
+        </form>
+        <div class="col">
+            <a href="~/Student/List?id=@ViewBag.Class&userid=@ViewBag.UserId" type="submit" class="btn btn-primary">Back</a>
+        </div>
+    </body>
+</html>

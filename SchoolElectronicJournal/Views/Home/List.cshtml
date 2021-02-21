@@ -1,0 +1,50 @@
+﻿@model IEnumerable<string>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Профиль</title>
+    <link href="~/css/styleProf.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div class="one">
+        <ul class="four">
+            <li class="li"><a class="three" href="FirstList.html">Главная</a></li>
+            <li class="li">Контакты</li>
+            <li class="li">О нас</li>
+            <li class="li"><a class="three" href="registraation.html">Регистрация</a></li>
+            
+            @if (Model.Contains("admin"))
+            {
+            <li class="li"><a class="three" asp-controller="Roles" asp-action="Index">Администрация</a></li>
+            }
+            <li class="li"><a class="three" asp-controller="User" asp-action="Index" asp-route-userid="@ViewBag.UserId">Данные</a></li>
+            <li class="li"><a class="three" asp-controller="Account" asp-action="Logout">Выйти</a></li>
+        </ul>
+    </div>
+    <h1>Ваш профиль</h1>
+    <div class="cl">
+        <h3>Классы</h3>
+    </div>
+    <div class="sum">
+        <ol>
+            <li><a href="~/Class/Index?id=@ViewBag.UserId" class="slka">Список классов</a></li>
+        </ol>
+
+    </div>
+    <h3>Предмет</h3>
+    <div class="list">
+        <ol>
+            <li>
+                <a href="~/Lesson/Index?id=@ViewBag.UserId"
+                   class="slka">
+                    Список предметов
+                </a>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>

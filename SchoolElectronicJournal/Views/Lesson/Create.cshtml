@@ -1,0 +1,42 @@
+﻿<form asp-action="Create" method="post">
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <div class="row">
+                <div class="col font-weight-bold">Name</div>
+
+                <div class="col"></div>
+            </div>
+            <div class="row">
+
+                <div class="col"><input name="Name" class="form-control" /></div>
+            </div>
+            <table>
+
+                <tr>
+                    @{
+
+
+
+                        foreach (var course in ViewBag.Courses)
+                        {
+
+                            @:<td>
+                                <input type="checkbox"
+                                       name="selectedCourses"
+                                       value="@course.StudentId"
+                                       />
+                                @course.Name @:  @course.SoName
+                            @:</td>
+                        }
+
+                    }
+            </table>
+        </div>
+        <div class="col">
+            <button name="id" value="@ViewBag.UserId" type="submit" class="btn btn-primary">Add</button>
+        </div>
+        <div class="col">
+            <a href="~/Lesson/Index?id=@ViewBag.UserId" type="submit" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+</form>
